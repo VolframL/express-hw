@@ -11,11 +11,7 @@ const PORT = process.env.PORT || 3000
 const app = express()
 app.use(bodyParser.json()) // To support JSON-encoded bodies
 
-const options = {
-	swaggerDefinition,
-	apis: ['./src/routes.ts']
-}
-const swaggerSpec = swaggerJSDoc(options)
+const swaggerSpec = swaggerJSDoc(swaggerDefinition)
 
 app.use('/swagger', swaggerUi.serve, swaggerUi.setup(swaggerSpec))
 
