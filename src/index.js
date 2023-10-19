@@ -13,7 +13,7 @@ app.use(bodyParser.json()) // To support JSON-encoded bodies
 
 const options = {
 	swaggerDefinition,
-	apis: ['./routes*.js']
+	apis: ['./src/routes.js']
 }
 const swaggerSpec = swaggerJSDoc(options)
 
