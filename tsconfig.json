@@ -5,7 +5,9 @@
   },
   "compilerOptions": {
     "module": "ESNext",
-    "allowSyntheticDefaultImports": true
+    "allowSyntheticDefaultImports": true,
+    "noEmit": true,
+		"allowImportingTsExtensions": true
   },
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
