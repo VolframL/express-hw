@@ -8,6 +8,8 @@ export const swaggerDefinition: swaggerJSDoc.Options = {
 			version: '1.0.0',
 			description: 'A sample API'
 		},
+		
 	},
-	apis: ['./src/routes.ts']
+	
+	apis: ['./src/routes/**/*.ts']
 }

@@ -1,20 +1,15 @@
 import bodyParser from 'body-parser'
 import express from 'express'
-import swaggerJSDoc from 'swagger-jsdoc'
-import swaggerUi from 'swagger-ui-express'
+import mongoose from 'mongoose'
 
-import { routes } from './routes.js'
-import { swaggerDefinition } from './swaggerDefinition.js'
+import { MONGODB_URL } from './config/keys.ts'
+import { routes } from './routes/index.ts'
 
-const PORT = process.env.PORT || 3000
+mongoose.connect(MONGODB_URL).then(() => console.log('mongodb connected')).catch(e => console.log(e))
 
 const app = express()
 app.use(bodyParser.json()) // To support JSON-encoded bodies
 
-const swaggerSpec = swaggerJSDoc(swaggerDefinition)
-
-app.use('/swagger', swaggerUi.serve, swaggerUi.setup(swaggerSpec))
-
 routes(app)
 
-app.listen(PORT)
+app.listen(3000)
