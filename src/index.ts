@@ -3,8 +3,8 @@ import express from 'express'
 import swaggerJSDoc from 'swagger-jsdoc'
 import swaggerUi from 'swagger-ui-express'
 
-import { routes } from './routes.js'
-import { swaggerDefinition } from './swaggerDefinition.js'
+import { routes } from './routes.ts'
+import { swaggerDefinition } from './swaggerDefinition.ts'
 
 const PORT = process.env.PORT || 3000
 
