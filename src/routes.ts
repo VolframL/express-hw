@@ -1,4 +1,7 @@
-export const routes = (app) => {
+import { Express } from "express-serve-static-core"
+import { IUser } from "./@types/user.interface"
+
+export const routes = (app: Express) => {
 	/**
 	 * @swagger
 	 * /:
@@ -67,7 +70,7 @@ export const routes = (app) => {
 			res.status(401).json({ message: 'You are not authorized' })
 		}),
 		app.post('/auth', (req, res) => {
-			const user = {
+			const user: IUser = {
 				username: 'John',
 				password: 'qwerty'
 			}
